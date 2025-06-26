@@ -166,108 +166,34 @@ personCard.addEventListener("person-card:menu-item-clicked", (event) => {
 # Start development server
 npm run dev
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
 # Run tests
 npm test
 
-# Run tests with UI
-npm run test:ui
-
-# Run tests once
-npm run test:run
-```
 
 ### Project Structure
 
 ```
-src/
-├── components/           # Future additional components
-├── styles/              # Global styles and CSS utilities
-├── types/               # TypeScript type definitions
-├── utils/               # Utility functions
-│   ├── dateFormatter.ts # Date formatting utilities
-│   └── sanitization.ts  # Input sanitization utilities
-├── main.ts              # Demo application entry point
-├── person-card.ts       # Main component implementation
-├── person-card.test.ts  # Component tests
-└── test-setup.ts        # Test configuration
 
-tasks/                   # Project documentation
-├── prd-person-card-component.md      # Product requirements
+src/
+├── components/ # Future additional components
+├── styles/ # Global styles and CSS utilities
+├── types/ # TypeScript type definitions
+├── utils/ # Utility functions
+│ ├── dateFormatter.ts # Date formatting utilities
+│ └── sanitization.ts # Input sanitization utilities
+├── main.ts # Demo application entry point
+├── person-card.ts # Main component implementation
+├── person-card.test.ts # Component tests
+└── test-setup.ts # Test configuration
+
+tasks/ # Project documentation
+├── prd-person-card-component.md # Product requirements
 └── tasks-prd-person-card-component.md # Development tasks
 
-ux-mocks/               # Design mockups
-├── card-mock.png       # Basic card design
-└── card-menu-mock.png  # Card with menu open
+ux-mocks/ # Design mockups
+├── card-mock.png # Basic card design
+└── card-menu-mock.png # Card with menu open
+
 ```
 
-### Testing
-
-The project uses Vitest with Testing Library for comprehensive testing:
-
-```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with coverage
-npm test -- --coverage
 ```
-
-Tests cover:
-
-- Component rendering and data display
-- Keyboard navigation and accessibility
-- Menu interactions and event handling
-- Input sanitization and validation
-- Error handling and edge cases
-
-### Architecture Decisions
-
-- **Shadow DOM**: Ensures style isolation and prevents CSS conflicts
-- **Vanilla Web Components**: No framework dependencies for maximum compatibility
-- **TypeScript**: Type safety and better developer experience
-- **Event-driven**: Uses custom events for loose coupling with parent applications
-- **Sanitization**: All user inputs are sanitized for security
-
-## Browser Support
-
-- Chrome 53+
-- Firefox 63+
-- Safari 10.1+
-- Edge 79+
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes and add tests
-4. Ensure all tests pass: `npm test`
-5. Commit your changes: `git commit -m 'Add amazing feature'`
-6. Push to the branch: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Security
-
-- All user inputs are sanitized to prevent XSS attacks
-- Shadow DOM provides style isolation
-- No external dependencies reduce attack surface
-- Input validation for all component properties
-
-## Performance
-
-- Lightweight (~15KB minified)
-- Shadow DOM for efficient style scoping
-- Event delegation for optimal memory usage
-- Lazy rendering for large lists (when multiple components are used)
